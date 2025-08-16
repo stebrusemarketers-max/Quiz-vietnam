@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Vietnam: Nord vs Sud</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Schermata di benvenuto -->
+        <div id="welcome-screen" class="screen active">
+            <div class="card">
+                <h1>🇻🇳 Quiz Vietnam</h1>
+                <h2>Nord vs Sud</h2>
+                <p>Scopri se preferisci le attrazioni del Nord (Hanoi) o del Sud (Ho Chi Minh)!</p>
+                
+                <div class="player-input">
+                    <label for="player-name">Nome giocatore (opzionale):</label>
+                    <input type="text" id="player-name" placeholder="Inserisci il tuo nome">
+                </div>
+                
+                <button id="start-quiz" class="btn btn-primary">Inizia Quiz</button>
+                
+                <div class="saved-results" id="saved-results">
+                    <h3>Risultati salvati:</h3>
+                    <div id="saved-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schermata del quiz -->
+        <div id="quiz-screen" class="screen">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="current-question">1</span> / <span id="total-questions">30</span>
+                </div>
+            </div>
+
+            <div class="card quiz-card">
+                <div class="attraction-image" id="attraction-image">
+                    <!-- Immagine SVG generata dinamicamente -->
+                </div>
+                
+                <div class="attraction-info">
+                    <h2 id="attraction-name">Nome Attrazione</h2>
+                    <p id="attraction-description">Descrizione dell'attrazione...</p>
+                </div>
+                
+                <div class="question">
+                    <h3>Ti piacerebbe visitarla?</h3>
+                </div>
+                
+                <div class="answer-buttons">
+                    <button id="btn-yes" class="btn btn-yes">✅ Sì</button>
+                    <button id="btn-no" class="btn btn-no">❌ No</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schermata dei risultati -->
+        <div id="results-screen" class="screen">
+            <div class="card results-card">
+                <h1 id="winner-title">🏆 Risultati</h1>
+                <div class="score-summary">
+                    <div class="score-item">
+                        <span class="score-label">Nord (Hanoi):</span>
+                        <span id="north-score" class="score-value">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">Sud (Ho Chi Minh):</span>
+                        <span id="south-score" class="score-value">0</span>
+                    </div>
+                </div>
+                
+                <div class="selected-attractions">
+                    <div class="attractions-section">
+                        <h3>🏔️ Attrazioni Nord scelte:</h3>
+                        <ul id="north-attractions"></ul>
+                    </div>
+                    <div class="attractions-section">
+                        <h3>🏙️ Attrazioni Sud scelte:</h3>
+                        <ul id="south-attractions"></ul>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="btn-restart" class="btn btn-primary">🔄 Ricomincia</button>
+                    <button id="btn-copy" class="btn btn-secondary">📋 Copia Risultati</button>
+                    <button id="btn-download" class="btn btn-secondary">💾 Scarica .txt</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
